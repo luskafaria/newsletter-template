@@ -8,6 +8,7 @@ async function query(queryObject) {
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
     max_connections: 500,
+    ssl: process.env.NODE_ENV === "production" ? true : false,
   });
 
   try {
