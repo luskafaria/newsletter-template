@@ -5,6 +5,8 @@ import { join } from "node:path";
 export default async function migrations(request, response) {
   const dbClient = await database.getNewClient();
 
+  console.log(request.method);
+
   const defaultMigrationOptions = {
     dbClient,
     dryRun: true,
